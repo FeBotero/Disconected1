@@ -51,8 +51,9 @@ public class Reactivate extends AppCompatActivity {
         HandleProps handleProps = new HandleProps();
 
         buttonActivate.setOnClickListener(view->{
-           if(passSaved.equals(pass.getText())){
+           if(passSaved.equals(pass.getText().toString().trim())){
                 Toast.makeText(this, "deubom", Toast.LENGTH_SHORT).show();
+               handleProps.write("persist.control.wifi.service", Boolean.toString(false));
             }else{
                Toast.makeText(this, "deuruim", Toast.LENGTH_SHORT).show();
            }
